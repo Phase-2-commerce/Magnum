@@ -1,12 +1,17 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+/**
+ * @format
+ * @type {import('tailwindcss').Config}
+ */
 
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
+export default {
+	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+
+	theme: {
+		extend: {
+			fontFamily: {
+				poppins: ['Poppins', 'sans-serif'],
+			},
+		},
+	},
+	plugins: [],
+};
