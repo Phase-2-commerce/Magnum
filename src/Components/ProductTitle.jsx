@@ -4,13 +4,10 @@ function ProductTitle() {
   return (
     <main className=' flex flex-row '>
          <div className=' '>
-        <div   className='  '>  gamming</div>
-        <div  className=''>gamepad</div>
-        <h1 className=''>gamepad</h1>
+        <h1 className=''>Playstore Ps 5</h1>
 
     </div>
     <div>
-         <ProductTitle/>
     </div>
     </main>
    
