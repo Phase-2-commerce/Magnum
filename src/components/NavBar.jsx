@@ -7,7 +7,7 @@ const NavBar = () => {
   return (
     <>
      <nav>
-        <div className="main-container">
+        <div className="font-bold flex justify-around ">
             <div className="name">
                 <p className='home-header'>Exclusive</p>
                 <ul>
