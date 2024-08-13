@@ -81,19 +81,182 @@
 }
 
 .more-info {
-    width: 1170px;
+    width: 1025px;
     height: 230px;
     top: 1034px;
-    left: 155px;
+    left: 210px;
     position: absolute;
+    display: flex;
+    gap: 120px;
 }
 
 .outside {
-    width: 169px;
-    height: 170px;
-    position: relative;
-    top: 30px;
-    left: 50px;
+    width:290px;
+    height: max-content;
+    padding-top: 30px;
+    padding-left: 50px;
     gap: 24px;
-    border: 1px solid grey;
+    
+    
+}
+
+.img {
+    width: 120px;
+    height: 120px;
+    background-color: rgba(209, 205, 205, 0.9);
+    border-radius: 50%;
+    margin-left: 28px;
+    padding-top: 20px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.store-icon {
+    width: 80px;
+    height: 80px;
+    background-color: black;
+    color: aliceblue;
+    padding: 15px 5px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.amount {
+    width: 92px;
+    height: 30px;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 4%;
+    color: #000;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 32px;
+    margin-left: 42px;
+    margin-bottom: 10px;
+}
+
+.amount-info {
+    width: 169px;
+    height: 24px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    size: 16px;
+    line-height: 24px;
+    color: #000;
+    text-wrap: nowrap;
+    margin-bottom: 10px;
+}
+
+.staff {
+    width: max-content;
+    height: 564px;
+    top: 1404px;
+    left: 210px;
+    gap: 170px;
+    position: absolute;
+    display: flex;
+}
+
+.staff-container {
+    width: 370px;
+    height: 564px;
+}
+
+.staff-image {
+  width: 370px;
+  height: 430px;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+}
+
+.staff-pic {
+    width: 336px;
+    height: 491px;
+    object-fit: cover;
+    margin-bottom: 25px;
+}
+
+.staff-info {
+    width: 185px;
+    height: 102px;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+
+.name {
+    width: 185px;
+    height: 30px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 30px;
+    letter-spacing: 4%;
+    color: #000;
+    margin-bottom: 0;
+    text-wrap: nowrap;
+}
+
+.rank {
+    width: 167px;
+    height: 24px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #000;
+    font-family: "Poppins";
+    margin-bottom: 10px;
+}
+
+.staff-socials {
+    display: flex;
+    gap: 16px;
+}
+
+.icon {
+    font-size: 24px;
+}
+
+.services {
+    width: max-content;
+    height: 161px;
+    top: 2164px;
+    left: 210px;
+    display: flex;
+    gap: 188px;
+    position: absolute;
+    justify-content: center;
+    margin-left: 120px;
+}
+
+.last-img {
+    width: 120px;
+    height: 120px;
+    background-color: rgba(209, 205, 205, 0.9);
+    border-radius: 50%;
+    margin-left: 65px;
+    padding-top: 20px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.free {
+    width: 242px;
+    height: 28px;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    text-wrap: nowrap;
+}
+
+.delivery {
+    width: 249px;
+    height: 21px;
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
 }
