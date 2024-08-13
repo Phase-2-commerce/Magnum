@@ -1,17 +1,12 @@
 /** @type {import('tailwindcss').Config} */
-// tailwind.config.js
-export const theme = {
-  extend: {
-    colors: {
-      primary: {
-        orange: "#DB4444",
-      },
-      secondary: {
-        green: "#00FF66",
-      },
-    },
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+
+  theme: {
+    extend: {},
   },
-};
-export const plugins = [];
-
-
+  plugins: [],
+}
