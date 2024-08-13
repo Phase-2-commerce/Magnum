@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 
 import NavBar from "./components/NavBar"
 import ProductDetails from './components/ProductDetails'
@@ -8,7 +8,6 @@ function App() {
     
     <>
      <NavBar />
-     <ProductDetails/>
     </>
   )
 }
