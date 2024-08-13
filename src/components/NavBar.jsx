@@ -1,6 +1,8 @@
 // import React from 'react'
 import '../NavBar.css'
 import { IoSearchOutline } from "react-icons/io5";
+import { IoHeartOutline } from "react-icons/io5";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 const NavBar = () => {
   return (
     <>
@@ -18,9 +20,12 @@ const NavBar = () => {
             <div className="search-container">
                 <input type="text" placeholder="What are you looking for?" />
                 <IoSearchOutline className='icon' />
+                <IoHeartOutline className='heart-icon' />
+                <AiOutlineShoppingCart  className='cart-icon'/>
             </div>
         </div>
      </nav>
+     <hr className='line-break'/>
     </>
   )
 }

@@ -15,22 +15,26 @@ body {
 
 .main-container {
     display: flex;
-    border-bottom: 1px solid grey;
     justify-content: space-around;
-    padding-bottom: 10px;
-    
+    width: 1440px;
+    height: 38px;
+    position: relative;
+    top: 50px;
+    left: 135px;
+    gap: 148px;
  }
+
 
  .name {
     display: flex;
-    gap: 148px;
+    gap: 190px;
     align-items: center;
  }
 
  ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 48px;
  }
 
  li {
@@ -46,9 +50,10 @@ body {
   width: 347px;
   height: 24px;
   gap: 24px;
+  align-items: center;
  }
 
- .search-input > input {
+ .search-container > input {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-size: 12px;
@@ -56,12 +61,27 @@ body {
     width: 243px;
     height: 38px;
     opacity: 50%;
-    background: #F5F5F5;
+    background: rgb(216, 215, 215);
+    padding: 10px;
+    border-radius: 4px;
+    gap: 10px;
  }
 
  .icon {
     width: 24px;
     height: 24px;
+    margin-left: -60px;
  }
 
+ .heart-icon, .cart-icon {
+    width: 24px;
+    height: 24px;
+    text-align: center;
+ }
+
+ .line-break {
+    height: 0;
+    position: relative;
+    top: 60px;
+ }
 
