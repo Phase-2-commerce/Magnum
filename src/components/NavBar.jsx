@@ -7,7 +7,7 @@ const NavBar = () => {
      <nav>
         <div className="main-container">
             <div className="name">
-                <p>Exclusive</p>
+                <p className='home-header'>Exclusive</p>
                 <ul>
                     <li>Home</li>
                     <li>Contact</li>
@@ -17,7 +17,7 @@ const NavBar = () => {
             </div>
             <div className="search-container">
                 <input type="text" placeholder="What are you looking for?" />
-                <IoSearchOutline className='text-[150px] ' />
+                <IoSearchOutline className='icon' />
             </div>
         </div>
      </nav>
