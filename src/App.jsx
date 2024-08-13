@@ -1,13 +1,19 @@
-import React from 'react'
+// import React from 'react'
+
+import NavBar from "./components/NavBar"
 
 import ProductTitle from './Components/ProductTitle'
 import ProductImages from './Components/ProductImages'
 function App() {
   return (
-    <div>
+    
+    <>
+     <NavBar />
+     <div>
         <ProductTitle/>
         <ProductImages/>
     </div>
+    </>
   )
 }
 
