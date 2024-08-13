@@ -50,9 +50,7 @@ const ProductDetails = () => {
           </p>
           <h5 className="text-xl font-semibold mb-2">$ 192.00</h5>
           <p className="text-sm mb-4">
-            PlayStation 5 Controller Skin High quality vinyl with air channel
-            adhesive for easy bubble free install & mess free removal Pressure
-            sensitive.
+            PlayStation 5 Controller cool with its testure
           </p>
           <hr className="mb-4" />
 
