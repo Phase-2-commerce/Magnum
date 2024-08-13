@@ -1,5 +1,5 @@
 // import React from 'react'
-import '../NavBar.css'
+// import '../NavBar.css'
 import { IoSearchOutline } from "react-icons/io5";
 import { IoHeartOutline } from "react-icons/io5";
 import { AiOutlineShoppingCart } from "react-icons/ai";
