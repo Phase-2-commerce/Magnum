@@ -1,9 +1,12 @@
 import React from 'react'
 
-const App = () => {
+import ProductTitle from './Components/ProductTitle'
+import ProductImages from './Components/ProductImages'
+function App() {
   return (
     <div>
-      App
+        <ProductTitle/>
+        <ProductImages/>
     </div>
   )
 }
