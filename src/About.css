@@ -84,7 +84,7 @@
     width: 1025px;
     height: 230px;
     top: 1034px;
-    left: 210px;
+    left: 250px;
     position: absolute;
     display: flex;
     gap: 120px;
@@ -259,4 +259,9 @@
     font-size: 14px;
     line-height: 21px;
     text-align: center;
+}
+
+.footer {
+    top: 2065px;
+    position: relative;
 }
