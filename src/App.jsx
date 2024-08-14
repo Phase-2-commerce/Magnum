@@ -1,17 +1,14 @@
 import React from 'react'
 import NavBar from "./components/NavBar"
-import ProductDetails from './components/ProductDetails'
-import SignupForm from './components/SignUpForm'
-import LoginForm from './components/LoginForm'
+import Footer from './components/Footer'
 
 function App() {
   return (
     
     <>
      <NavBar />
-     <ProductDetails/>
-     <SignupForm/>
-     <LoginForm/>
+     <Footer/>
+
     </>
   )
 }
