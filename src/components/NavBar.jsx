@@ -6,7 +6,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 const NavBar = () => {
   return (
     <>
-     <nav>
+     <nav className='h-[100px] border-b'>
         <div className="main-container">
             <div className="name">
                 <p className='home-header'>Exclusive</p>
@@ -25,7 +25,7 @@ const NavBar = () => {
             </div>
         </div>
      </nav>
-     <hr className='line-break'/>
+  
     </>
   )
 }
