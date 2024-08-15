@@ -26,7 +26,7 @@ const NavBar = () => {
             </div>
         </div>
      </nav>
-     <hr className='line-break'/>
+  
     </>
   )
 }
