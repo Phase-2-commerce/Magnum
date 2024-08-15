@@ -5,7 +5,7 @@ import InputField from "./InputField";
         <div className="flex items-center justify-center min-h-screen bg-gray-100 h-[100vh]">
             <div className="bg-white rounded-lg shadow-lg flex flex-col md:flex-row h-[100vh] w-full max-w-4xl">
                 {/* Left Side Image */}
-                <div className="md:w-1/2 w-full h-64 md:h-auto bg-cover bg-center" style={{ backgroundImage: "url('https://via.placeholder.com/400x600')" }}>
+                <div className="md:w-1/2 w-full h-64 md:h-auto bg-cover bg-center" style={{ backgroundImage: "url('https://m.media-amazon.com/images/I/51Zcib6t7YL._AC_US1000_.jpg')" }}>
                 </div>
 
                 {/* Right Side Form */}
@@ -36,7 +36,7 @@ import InputField from "./InputField";
                             {/* Continue with Google */}
                             <div className="w-full">
                                 <button className="w-full flex items-center justify-center bg-white border border-gray-300 text-black py-2 rounded hover:bg-gray-100 transition duration-300">
-                                    <img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google" className="mr-2" />
+                                    <img src="" alt="Google" className="mr-2" />
                                     Continue with Google
                                 </button>
                             </div>
