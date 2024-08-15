@@ -64,23 +64,20 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
 		);
 	}
 };
+// import React from 'react'
+import NavBar from "./components/NavBar"
+import Footer from './components/Footer'
+import LoginForm from './components/LoginForm'
+import SignUpForm from './components/SignUpForm'
 
 function App() {
-	const countdownTime = Date.now() + 3 * 24 * 60 * 60 * 1000;
-	const countdownTimer = (
-		<Countdown date={countdownTime} renderer={renderer} />
-	);
-	const countdownTime2 = Date.now() + 24 * 24 * 60 * 60 * 1000;
-	const countdownTimer2 = (
-		<Countdown date={countdownTime2} renderer={renderer} />
-	);
-	return (
-		<>
-		<NavBar />
-			<Home countdownTimer={countdownTimer} countdownTimer2={countdownTimer2} />
-			<Footer />
-		</>
-	);
+  return (
+    
+    <>
+     <NavBar />
+     <ProductDetails/>
+    </>
+  )
 }
 
 export default App;
