@@ -12,10 +12,10 @@ const NavBar = () => {
             <div className = "flex gap-[190px] items-center">
                 <p className='font-bold text-2xl leading-6 tracking-wide'>Exclusive</p>
                 <ul className = "list-none flex gap-[48px]">
-                    <li className="font-poppins font-normal text-base leading-6 text-center">Home</li>
-                    <li className="font-poppins font-normal text-base leading-6 text-center">Contact</li>
-                    <li className="font-poppins font-normal text-base leading-6 text-center">About</li>
-                    <li className="font-poppins font-normal text-base leading-6 text-center">Sign Up</li>
+                    <li className="font-poppins font-normal text-base leading-6 text-center  hover:scale-110 transition-all duration-300 border-b border-transparent hover:border-grey-500 hover:text-red-500 ease-in-out"><a href="" className="hover">Home</a></li>
+                    <li className="font-poppins font-normal text-base leading-6 text-center  hover:scale-110 transition-all duration-300 border-b border-transparent hover:border-grey-500 hover:text-red-500 ease-in-out"><a href="" className="hover">Contact</a></li>
+                    <li className="font-poppins font-normal text-base leading-6 text-center  hover:scale-110 transition-all duration-300 border-b border-transparent hover:border-grey-500 hover:text-red-500 ease-in-out"><a href="" className="hover">About</a></li>
+                    <li className="font-poppins font-normal text-base leading-6 text-center  hover:scale-110 transition-all duration-300 border-b border-transparent hover:border-grey-500 hover:text-red-500 ease-in-out"><a href="" className="hover">Sign Up</a></li>
                 </ul>
             </div>
             <div className="flex w-[347px] h-[24px] gap-[24px] items-center">
