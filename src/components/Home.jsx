@@ -1,7 +1,7 @@
 /** @format */
 
 import { useEffect, useState } from "react";
-import NavBar from "./NavBar";
+// import NavBar from "./NavBar";
 import { GoArrowLeft } from "react-icons/go";
 import { GoArrowRight } from "react-icons/go";
 import { fetchData } from "../fetchFlashSales";
@@ -169,9 +169,9 @@ const Home = ({ countdownTimer, countdownTimer2 }) => {
 					{product}
 				</div>
 			</div>
-			<button className='absolute top-[1219px] left-[603px] w-[234px] h-[56] px-[48px] py-[16px] bg-[#DB4444] text-white rounded-[4px] '>
-				View All Products
-			</button>
+			<button className='absolute top-[1219px] left-[603px] w-[234px] h-[56px] px-[48px] py-[16px] bg-[#DB4444] text-white rounded-[4px] hover:outline hover:outline-2 hover:outline-[#DB4444] focus:outline focus:outline-2 focus:outline-[#DB4444] hover:bg-transparent hover:text-[#DB4444] transition duration-[0.5s]'>
+    View All Products
+</button>
 			<hr className='w-[1170px] absolute top-[1335px] left[1305px] ml-[135px] ' />
 			{/* Browse Category */}
 			<div className='w-[1308px] h-[313px] flex flex-col absolute top-[1415px] left-[135px] gap-[60px] '>
@@ -290,9 +290,7 @@ const Home = ({ countdownTimer, countdownTimer2 }) => {
 					{Bests}
 				</div>
 			</div>
-			<button className='absolute top-[1219px] left-[603px] w-[234px] h-[56] px-[48px] py-[16px] bg-[#DB4444] text-white rounded-[4px] '>
-				View All Products
-			</button>
+			
 			<hr className='w-[1170px] absolute top-[1335px] left[1305px] ml-[135px] ' />
 			<div className='w-[1170px] h-[500px] absolute top-[2526px] left-[135px] bg-black'>
 				<div className='w-[90px] h-[20px] relative top-[69px] left-[56px] text-[#00FF66] font-[600] text-[16px] leading-[20px]'>
