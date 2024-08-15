@@ -5,6 +5,7 @@ import side1 from '../assets/side1.jpeg';
 import side2 from '../assets/side2.jpeg';
 import side3 from '../assets/side3.jpeg';
 import side from  '../assets/side.jpeg';
+import { FiShoppingCart } from "react-icons/fi";
 
 const ProductDetails = () => {
   const [categories, setCategories] = useState([])
@@ -50,8 +51,8 @@ const ProductDetails = () => {
           </p>
           <h5 className="text-xl font-semibold mb-2">$ 192.00</h5>
           <p className="text-sm mb-4">
-            PlayStation 5 Controller cool with its testure
-          </p>
+            PlayStation 5 Controller cool and pleasant you will enjoy it buy it and try
+            am sure you will feel it and like it.</p>
           <hr className="mb-4" />
 
           <p className="mb-2">Colors:</p>
@@ -84,7 +85,7 @@ const ProductDetails = () => {
           <div className="space-y-4">
             <div className="border rounded-lg p-4">
               <div className="flex items-center gap-2 mb-2">
-                <span>🚚</span>
+                <span><FiShoppingCart className='text-red-500' /></span>
                 <p className="font-semibold">Free Delivery</p>
               </div>
               <a href="#" className="text-sm text-blue-500">Enter your postal code for delivery availability</a>
