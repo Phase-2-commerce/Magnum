@@ -2,7 +2,7 @@
 import InputField from "./InputField";
  const SignupForm = () => {
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-100 h-[100vh]">
+        <div className="flex items-center justify-center min-h-screen bg-gray-100 h-[100vh] mt-20 rounded-xl mb-20">
             <div className="bg-white rounded-lg shadow-lg flex flex-col md:flex-row h-[100vh] w-full max-w-4xl">
                 {/* Left Side Image */}
                 <div className="md:w-1/2 w-full h-64 md:h-auto bg-cover bg-center" style={{ backgroundImage: "url('https://via.placeholder.com/400x600')" }}>
