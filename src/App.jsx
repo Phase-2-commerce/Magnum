@@ -1,12 +1,16 @@
 /** @format */
-import React from "react";
+// import React from "react";
+// import ReactDOM from "react-dom";
 import Countdown from "react-countdown";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
-import Footer from "./components/Footer"
-import BeautyFetch from "./components/BeautyFetch";
-//This a count-down Library snippet...DON'T EDIT!!!!!!
+import Footer from "./components/Footer";
+import Contact from "./components/Contact";
+import About from "./components/About";
+import SignUpForm from "./components/SignUpForm";
 
+import { Route, Routes } from "react-router-dom";
+//This a count-down Library snippet...DON'T EDIT!!!!!!
 
 const Completionist = () => <span>Time&#39;s up!</span>;
 
@@ -76,11 +80,21 @@ function App() {
 	);
 	return (
 		<>
-		<NavBar />
-			<Home countdownTimer={countdownTimer} countdownTimer2={countdownTimer2} />
-	
-			<Footer />
-			<BeautyFetch/>
+			<NavBar />
+			<Routes>
+				<Route
+					path='/'
+					element={
+						<Home
+							countdownTimer={countdownTimer}
+							countdownTimer2={countdownTimer2}
+						/>
+					}
+				/>
+				<Route path='/contact' element={<Contact />} />
+				<Route path='/about' element={<About />} />
+				<Route path='/signup' element={<SignUpForm />} />
+			</Routes>
 		</>
 	);
 }
