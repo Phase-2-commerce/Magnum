@@ -11,13 +11,11 @@ import { IoShieldCheckmarkSharp } from "react-icons/io5";
 
 
 import '../About.css'
-import NavBar from './NavBar'
-import Footer from "./Footer";
+
 
 const About = () => {
   return (
     <>
-     <NavBar/>
      <div className="about-container">
         
         <p className="about-header">
@@ -141,9 +139,7 @@ const About = () => {
             </div>
         </div>
      </div>
-     <div className="footer">
-        <Footer />
-     </div>
+     
     </>
   )
 }
