@@ -1,6 +1,7 @@
 /** @format */
 
 import { useEffect, useState } from "react";
+
 // import NavBar from "./NavBar";
 import { GoArrowLeft } from "react-icons/go";
 import { GoArrowRight } from "react-icons/go";
@@ -135,7 +136,13 @@ const Home = ({ countdownTimer, countdownTimer2 }) => {
 					<div>Groceries & Pets</div>
 					<div>Health & Beauty</div>
 				</div>
-				<div className='w-[892px] h-[344px] absolute top-[182px] left-[413px] bg-black'></div>
+				<div className='w-[892px] h-[344px] absolute top-[182px] left-[413px] bg-black'>
+					<img
+						className="absolute left-[320px]"
+						src='https://www.apple.com/newsroom/images/product/iphone/lifestyle/Apple_iPhone-11-and-iPhone-11-Pro-reviews_091719_inline.gif.large.gif'
+						alt=''
+					/>
+				</div>
 			</div>
 			{/* Flash Sales */}
 			<div className='w-[1308px] h-[493px] flex flex-col absolute top-[666px] left-[135px] gap-[40px] '>
