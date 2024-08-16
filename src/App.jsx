@@ -1,10 +1,10 @@
 /** @format */
 import React from "react";
-import ReactDOM from "react-dom";
 import Countdown from "react-countdown";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer"
+import BeautyFetch from "./components/BeautyFetch";
 //This a count-down Library snippet...DON'T EDIT!!!!!!
 
 
@@ -78,7 +78,9 @@ function App() {
 		<>
 		<NavBar />
 			<Home countdownTimer={countdownTimer} countdownTimer2={countdownTimer2} />
+	
 			<Footer />
+			<BeautyFetch/>
 		</>
 	);
 }
