@@ -5,11 +5,15 @@ import Countdown from "react-countdown";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import Contact from "./components/Contact"
-import About from "./components/About"
-import SignUpForm from "./components/SignUpForm"
+import Contact from "./components/Contact";
+import About from "./components/About";
+import SignUpForm from "./components/SignUpForm";
 
-import { Route, Routes } from "react-router-dom";
+import { Route, Router, Routes } from "react-router-dom";
+import BeautyFetch from "./components/BeautyFetch";
+import WomenFetch from "./components/WomenFetch";
+import HomeEquipments from "./components/HomeEquipments";
+import MensCategories from "./components/MensCategories";
 //This a count-down Library snippet...DON'T EDIT!!!!!!
 
 const Completionist = () => <span>Time&#39;s up!</span>;
@@ -70,24 +74,39 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
 };
 
 function App() {
-  const countdownTime = Date.now() + 3 * 24 * 60 * 60 * 1000;
-  const countdownTimer = <Countdown date={countdownTime} renderer={renderer} />;
-  const countdownTime2 = Date.now() + 24 * 24 * 60 * 60 * 1000;
-  const countdownTimer2 = (
-    <Countdown date={countdownTime2} renderer={renderer} />
-  );
-  return (
-    <>
-	<NavBar/>
-      <Routes>
-      <Route path="/"  element={ <Home countdownTimer={countdownTimer} countdownTimer2={countdownTimer2} />}/>
-	   <Route path="/contact" element={<Contact />}/> 
-	   <Route path="/about" element={<About />}/>
-	   <Route path="/signup" element={<SignUpForm />}/>
-	  </Routes>
-
-    </>
-  );
+	const countdownTime = Date.now() + 3 * 24 * 60 * 60 * 1000;
+	const countdownTimer = (
+		<Countdown date={countdownTime} renderer={renderer} />
+	);
+	const countdownTime2 = Date.now() + 24 * 24 * 60 * 60 * 1000;
+	const countdownTimer2 = (
+		<Countdown date={countdownTime2} renderer={renderer} />
+	);
+	return (
+		<>
+			<NavBar />
+			
+				<Routes>
+					<Route
+						path='/'
+						element={
+							<Home
+								countdownTimer={countdownTimer}
+								countdownTimer2={countdownTimer2}
+							/>
+						}
+					/>
+					<Route path='/contact' element={<Contact />} />
+					<Route path='/about' element={<About />} />
+					<Route path='/signup' element={<SignUpForm />} />
+				<Route path='/beautyFetch' element={<BeautyFetch />} />
+				<Route path="/womenFetch" element={<WomenFetch />} />
+				<Route path="/homeEquipments" element={<HomeEquipments />} />
+				<Route path="/mensCategories" element={<MensCategories />} />
+				</Routes>
+		
+		</>
+	);
 }
 
 export default App;
