@@ -14,6 +14,7 @@ import BeautyFetch from "./components/BeautyFetch";
 import WomenFetch from "./components/WomenFetch";
 import HomeEquipments from "./components/HomeEquipments";
 import MensCategories from "./components/MensCategories";
+import Wishlist from "./components/Wishlist";
 //This a count-down Library snippet...DON'T EDIT!!!!!!
 
 const Completionist = () => <span>Time&#39;s up!</span>;
@@ -102,7 +103,8 @@ function App() {
 				<Route path='/beautyFetch' element={<BeautyFetch />} />
 				<Route path="/womenFetch" element={<WomenFetch />} />
 				<Route path="/homeEquipments" element={<HomeEquipments />} />
-				<Route path="/mensCategories" element={<MensCategories />} />
+        <Route path="/mensCategories" element={<MensCategories />} />
+        <Route path="/wishlist" element={<Wishlist/>} />
 				</Routes>
 		
 		</>
