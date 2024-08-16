@@ -208,7 +208,7 @@ const Home = ({ countdownTimer, countdownTimer2 }) => {
 							</div>
 						</div>
 					</Link>
-					<Link to='/homeCategories'>
+					<Link to='/mensCategories'>
 						<div className='w-[170px] h-[145px] border-[1.5px] rounded-[4px] flex flex-row gap-[30px] relative '>
 							<GiClothes className='absolute top-[25px] left-[31px] text-[59px]' />
 							<div className='w-[59px] h-[24px] absolute top-[97px] left-[25px]'>
@@ -232,42 +232,30 @@ const Home = ({ countdownTimer, countdownTimer2 }) => {
 							</div>
 						</div>
 					</Link>
-					<div className='w-[170px] h-[145px] border-[1.5px] rounded-[4px] flex flex-row gap-[30px] relative'>
-						<FaKitchenSet className='absolute top-[25px] left-[31px] text-[59px]' />
-						<div className='w-[59px] h-[24px] absolute top-[97px] left-[25px]'>
-							Kitchen
+					<Link to='/kitchensFetch'>
+						<div className='w-[170px] h-[145px] border-[1.5px] rounded-[4px] flex flex-row gap-[30px] relative'>
+							<FaKitchenSet className='absolute top-[25px] left-[31px] text-[59px]' />
+							<div className='w-[59px] h-[24px] absolute top-[97px] left-[25px]'>
+								Kitchen
+							</div>
 						</div>
-					</div>
-					<div className='w-[170px] h-[145px] border-[1.5px] rounded-[4px] flex flex-row gap-[30px] relative'>
-						<TiWatch className='absolute top-[25px] left-[31px] text-[59px]' />
-						<div className='w-[59px] h-[24px] absolute top-[97px] left-[25px]'>
-							Watches
+					</Link>
+					<Link to='/watchFetch'>
+						<div className='w-[170px] h-[145px] border-[1.5px] rounded-[4px] flex flex-row gap-[30px] relative'>
+							<TiWatch className='absolute top-[25px] left-[31px] text-[59px]' />
+							<div className='w-[59px] h-[24px] absolute top-[97px] left-[25px]'>
+								Watches
+							</div>
 						</div>
-					</div>
-					<div className='w-[170px] h-[145px] border-[1.5px] rounded-[4px] flex flex-row gap-[30px] relative'>
-						<MdDevices className='absolute top-[25px] left-[31px] text-[59px]' />
-						<div className='w-[59px] h-[24px] absolute top-[97px] left-[25px]'>
-							Devices
+					</Link>
+					<Link to='/deviceFetch'>
+						<div className='w-[170px] h-[145px] border-[1.5px] rounded-[4px] flex flex-row gap-[30px] relative'>
+							<MdDevices className='absolute top-[25px] left-[31px] text-[59px]' />
+							<div className='w-[59px] h-[24px] absolute top-[97px] left-[25px]'>
+								Devices
+							</div>
 						</div>
-					</div>
-					<div className='w-[170px] h-[145px] border-[1.5px] rounded-[4px] flex flex-row gap-[30px] relative'>
-						<IoCarOutline className='absolute top-[25px] left-[31px] text-[59px]' />{" "}
-						<div className='w-[59px] h-[24px] absolute top-[97px] left-[25px]'>
-							Vehicle
-						</div>
-					</div>
-					<div className='w-[170px] h-[145px] border-[1.5px] rounded-[4px] flex flex-row gap-[30px] relative'>
-						<LiaMotorcycleSolid className='absolute top-[25px] left-[31px] text-[59px]' />{" "}
-						<div className='w-[59px] h-[24px] absolute top-[97px] left-[25px]'>
-							MotorBike
-						</div>
-					</div>
-					<div className='w-[170px] h-[145px] border-[1.5px] rounded-[4px] flex flex-row gap-[30px] relative'>
-						<MdSportsBasketball className='absolute top-[25px] left-[31px] text-[59px] ' />{" "}
-						<div className='w-[59px] h-[24px] absolute top-[97px] left-[25px]'>
-							Sports
-						</div>
-					</div>
+					</Link>
 				</div>
 			</div>
 			{/*Best Selling Products  */}

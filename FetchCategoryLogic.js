@@ -14,7 +14,7 @@ import  { useEffect, useState } from 'react'
    fetch(selected[0].url).then(res => res.json()).then(data => console.log(data))
   }
 
-  console.log(selectCategory("beauty")); }
+  console.log(selectCategory("beauty")) }
 
 
 
