@@ -198,33 +198,40 @@ const Home = ({ countdownTimer, countdownTimer2 }) => {
 						</div>
 					</div>
 				</div>
+
 				<div className='w-[1308px] h-[145px]   flex flex-row gap-[16px]'>
-					<div className='w-[170px] h-[145px] border-[1.5px] rounded-[4px] flex flex-row gap-[30px] relative '>
-						<GiDress className='absolute top-[25px] left-[31px] text-[59px]' />
-						<div className='w-[59px] h-[24px] absolute top-[97px] left-[25px]'>
-							Woman&#39;s
+					<Link to='/womenFetch'>
+						<div className='w-[170px] h-[145px] border-[1.5px] rounded-[4px] flex flex-row gap-[30px] relative '>
+							<GiDress className='absolute top-[25px] left-[31px] text-[59px]' />
+							<div className='w-[59px] h-[24px] absolute top-[97px] left-[25px]'>
+								Woman&#39;s
+							</div>
 						</div>
-					</div>
-					<div className='w-[170px] h-[145px] border-[1.5px] rounded-[4px] flex flex-row gap-[30px] relative '>
-						<GiClothes className='absolute top-[25px] left-[31px] text-[59px]' />
-						<div className='w-[59px] h-[24px] absolute top-[97px] left-[25px]'>
-							Man&#39;s
+					</Link>
+					<Link to='/homeCategories'>
+						<div className='w-[170px] h-[145px] border-[1.5px] rounded-[4px] flex flex-row gap-[30px] relative '>
+							<GiClothes className='absolute top-[25px] left-[31px] text-[59px]' />
+							<div className='w-[59px] h-[24px] absolute top-[97px] left-[25px]'>
+								Man&#39;s
+							</div>
 						</div>
-					</div>
-					<div className='w-[170px] h-[145px] border-[1.5px] rounded-[4px] flex flex-row gap-[30px] relative'>
-						<RiArmchairLine className='absolute top-[25px] left-[31px] text-[59px]' />
-						<div className='w-[59px] h-[24px] absolute top-[97px] left-[25px]'>
-							Furniture
+					</Link>
+					<Link to='/homeEquipments'>
+						<div className='w-[170px] h-[145px] border-[1.5px] rounded-[4px] flex flex-row gap-[30px] relative'>
+							<RiArmchairLine className='absolute top-[25px] left-[31px] text-[59px]' />
+							<div className='w-[59px] h-[24px] absolute top-[97px] left-[25px]'>
+								Furniture
+							</div>
 						</div>
-					</div>
-					<div className='w-[170px] h-[145px] border-[1.5px] rounded-[4px] flex flex-row gap-[30px] relative'>
-						<GiLipstick className='absolute top-[25px] left-[31px] text-[59px]' />
-						<Link to='./BeautyFetch.jsx'>
+					</Link>
+					<Link to='/beautyFetch'>
+						<div className='w-[170px] h-[145px] border-[1.5px] rounded-[4px] flex flex-row gap-[30px] relative'>
+							<GiLipstick className='absolute top-[25px] left-[31px] text-[59px]' />
 							<div className='w-[59px] h-[24px] absolute top-[97px] left-[25px]'>
 								Beauty
 							</div>
-						</Link>
-					</div>
+						</div>
+					</Link>
 					<div className='w-[170px] h-[145px] border-[1.5px] rounded-[4px] flex flex-row gap-[30px] relative'>
 						<FaKitchenSet className='absolute top-[25px] left-[31px] text-[59px]' />
 						<div className='w-[59px] h-[24px] absolute top-[97px] left-[25px]'>
