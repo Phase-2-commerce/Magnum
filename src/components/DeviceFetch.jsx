@@ -2,204 +2,203 @@
 
 import React, { useEffect, useState } from "react";
 import { fetchCategory } from "../FetchCategoty"; // Ensure this path is correct
-import { data } from "autoprefixer";
 
-const   DeviceFetch = ({ selectCategory }) => {
+const DeviceFetch = ({ selectCategory }) => {
 	const [categories, setCategories] = useState([]);
 	const [laptops, setLaptop] = useState([]);
-  const [tabs, setTab] = useState([]);
-  const [smartphones, setSmart] = useState([]);
-  const [mobiles, setMobile] = useState([]);
+	const [tabs, setTab] = useState([]);
+	const [smartphones, setSmart] = useState([]);
+	const [mobiles, setMobile] = useState([]);
 
-
-  
-  
-
-  //dresses
-  
 	useEffect(() => {
-		// Fetch categories
 		fetchCategory()
 			.then((fetchedCategories) => {
 				console.log("Fetched Categories:", fetchedCategories);
 				setCategories(fetchedCategories);
 
-				// Find the URL for the "dresses" category
 				const laptopsCategory = fetchedCategories.find(
 					(category) => category.slug === "laptops"
 				);
 				if (laptopsCategory) {
-					console.log("laptops Category URL:", laptopsCategory.url);
-
-					// Fetch data from the laptops category URL
+					console.log("Laptops Category URL:", laptopsCategory.url);
 					return fetch(laptopsCategory.url);
 				} else {
-					console.warn("laptops category not found.");
-					return Promise.resolve(new Response(JSON.stringify([]))); // Resolve with empty data if not found
+					console.warn("Laptops category not found.");
+					return Promise.resolve(new Response(JSON.stringify([])));
 				}
 			})
 			.then((response) => {
-				// Check if response is ok
 				if (!response.ok) {
 					throw new Error(`HTTP error! Status: ${response.status}`);
 				}
-				return response.json(); // Parse the response body as JSON
+				return response.json();
 			})
 			.then((data) => {
 				console.log(data);
-				setLaptop(data.products || []); // Assuming the data has a 'products' key
+				setLaptop(data.products || []);
 			})
 			.catch((error) => {
 				console.error("Error fetching data:", error);
 			});
-  }, [selectCategory])
-  
-  //shoes
+	}, [selectCategory]);
 
-useEffect(() => {
-	// Fetch categories
-	fetchCategory()
-		.then((fetchedCategories) => {
-			console.log("Fetched Categories:", fetchedCategories);
-			setCategories(fetchedCategories);
-
-			// Find the URL for the "beauty" category
-			const tabscategory = fetchedCategories.find(
-				(category) => category.slug === "tablets"
-			);
-			if (tabscategory) {
-				console.log("tabCategory URL:", tabscategory.url);
-
-				// Fetch data from the beauty category URL
-				return fetch(tabscategory.url);
-			} else {
-				console.warn("Beauty category not found.");
-				return Promise.resolve(new Response(JSON.stringify([]))); // Resolve with empty data if not found
-			}
-		})
-		.then((response) => {
-			// Check if response is ok
-			if (!response.ok) {
-				throw new Error(`HTTP error! Status: ${response.status}`);
-			}
-			return response.json(); // Parse the response body as JSON
-		})
-		.then((data) => {
-			console.log(data);
-			setTab(data.products || []); // Assuming the data has a 'products' key
-		})
-		.catch((error) => {
-			console.error("Error fetching data:", error);
-		});
-}, [selectCategory]);
-  
-  //jewellery
 	useEffect(() => {
-		// Fetch categories
 		fetchCategory()
 			.then((fetchedCategories) => {
 				console.log("Fetched Categories:", fetchedCategories);
 				setCategories(fetchedCategories);
 
-				// Find the URL for the "jewellery" category
+				const tabscategory = fetchedCategories.find(
+					(category) => category.slug === "tablets"
+				);
+				if (tabscategory) {
+					console.log("Tablets Category URL:", tabscategory.url);
+					return fetch(tabscategory.url);
+				} else {
+					console.warn("Tablets category not found.");
+					return Promise.resolve(new Response(JSON.stringify([])));
+				}
+			})
+			.then((response) => {
+				if (!response.ok) {
+					throw new Error(`HTTP error! Status: ${response.status}`);
+				}
+				return response.json();
+			})
+			.then((data) => {
+				console.log(data);
+				setTab(data.products || []);
+			})
+			.catch((error) => {
+				console.error("Error fetching data:", error);
+			});
+	}, [selectCategory]);
+
+	useEffect(() => {
+		fetchCategory()
+			.then((fetchedCategories) => {
+				console.log("Fetched Categories:", fetchedCategories);
+				setCategories(fetchedCategories);
+
 				const smartphonesCategory = fetchedCategories.find(
 					(category) => category.slug === "womens-smartphones"
 				);
 				if (smartphonesCategory) {
-					console.log("smartphones Category URL:", smartphonesCategory.url);
-
-					// Fetch data from the smartphones category URL
+					console.log("Smartphones Category URL:", smartphonesCategory.url);
 					return fetch(smartphonesCategory.url);
 				} else {
-					console.warn("smartphones category not found.");
-					return Promise.resolve(new Response(JSON.stringify([]))); // Resolve with empty data if not found
+					console.warn("Smartphones category not found.");
+					return Promise.resolve(new Response(JSON.stringify([])));
 				}
 			})
 			.then((response) => {
-				// Check if response is ok
 				if (!response.ok) {
 					throw new Error(`HTTP error! Status: ${response.status}`);
 				}
-				return response.json(); // Parse the response body as JSON
+				return response.json();
 			})
 			.then((data) => {
 				console.log(data);
-				 setSmart(data.products || []); // Assuming the data has a 'products' key
+				setSmart(data.products || []);
 			})
 			.catch((error) => {
 				console.error("Error fetching data:", error);
 			});
 	}, [selectCategory]);
 
-	//tops
-
 	useEffect(() => {
-		// Fetch categories
 		fetchCategory()
 			.then((fetchedCategories) => {
 				console.log("Fetched Categories:", fetchedCategories);
 				setCategories(fetchedCategories);
 
-				// Find the URL for the "fragarance" category
 				const mobilesCategory = fetchedCategories.find(
 					(category) => category.slug === "mobile-accessories"
 				);
 				if (mobilesCategory) {
-					console.log("Fragrance Category URL:", mobilesCategory.url);
-
-					// Fetch data from the beauty category URL
+					console.log("Mobiles Category URL:", mobilesCategory.url);
 					return fetch(mobilesCategory.url);
 				} else {
-					console.warn("Beauty category not found.");
-					return Promise.resolve(new Response(JSON.stringify([]))); // Resolve with empty data if not found
+					console.warn("Mobiles category not found.");
+					return Promise.resolve(new Response(JSON.stringify([])));
 				}
 			})
 			.then((response) => {
-				// Check if response is ok
 				if (!response.ok) {
 					throw new Error(`HTTP error! Status: ${response.status}`);
 				}
-				return response.json(); // Parse the response body as JSON
+				return response.json();
 			})
 			.then((data) => {
 				console.log(data);
-				setMobile(data.products || []); // Assuming the data has a 'products' key
+				setMobile(data.products || []);
 			})
 			.catch((error) => {
 				console.error("Error fetching data:", error);
 			});
 	}, [selectCategory]);
 
-
- 
 	return (
-		<div>
-			<div className='w-[300px] h-[26px] text-[20px] font-normal font-poppins leading-[26px] mb-[70px]'>
-				Beauty Products
+		<div className="p-4 bg-white text-red-600">
+			<div className="text-2xl font-semibold mb-8 border-b-2 border-red-600 pb-2">
+				Devices
 			</div>
 
-			{laptops.map((laptop, index) => (
-				<div key={index}>
-					<img src={laptop.thumbnail} alt='' />
+			{/* Laptops Section */}
+			<div className="mb-8">
+				<h2 className="text-xl font-semibold text-red-600 mb-4">Laptops</h2>
+				<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+					{laptops.map((laptop, index) => (
+						<div key={index} className="border border-red-600 rounded-lg p-4 bg-white shadow-lg">
+							<img src={laptop.thumbnail} alt="" className="w-full h-40 object-cover mb-2 rounded"/>
+							<div className="text-red-600 font-semibold">{laptop.name}</div>
+							<p className="text-gray-700">{laptop.price}</p>
+						</div>
+					))}
 				</div>
-			))}
-			{tabs.map((tab, index) => (
-				<div key={index}>
-          <img src={tab.thumbnail} alt='' />
-          
+			</div>
+
+			{/* Tablets Section */}
+			<div className="mb-8">
+				<h2 className="text-xl font-semibold text-red-600 mb-4">Tablets</h2>
+				<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+					{tabs.map((tab, index) => (
+						<div key={index} className="border border-red-600 rounded-lg p-4 bg-white shadow-lg">
+							<img src={tab.thumbnail} alt="" className="w-full h-40 object-cover mb-2 rounded"/>
+							<div className="text-red-600 font-semibold">{tab.name}</div>
+							<p className="text-gray-700">{tab.price}</p>
+						</div>
+					))}
 				</div>
-			))}
-			{smartphones.map((smartphone, index) => (
-				<div key={index}>
-					<img src={smartphone.thumbnail} alt='' />
+			</div>
+
+			{/* Smartphones Section */}
+			<div className="mb-8">
+				<h2 className="text-xl font-semibold text-red-600 mb-4">Smartphones</h2>
+				<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+					{smartphones.map((smartphone, index) => (
+						<div key={index} className="border border-red-600 rounded-lg p-4 bg-white shadow-lg">
+							<img src={smartphone.thumbnail} alt="" className="w-full h-40 object-cover mb-2 rounded"/>
+							<div className="text-red-600 font-semibold">{smartphone.name}</div>
+							<p className="text-gray-700">{smartphone.price}</p>
+						</div>
+					))}
 				</div>
-			))}
-			{mobiles.map((mobile, index) => (
-				<div key={index}>
-					<img src={mobile.thumbnail} alt='' />
+			</div>
+
+			{/* Mobile Accessories Section */}
+			<div className="mb-8">
+				<h2 className="text-xl font-semibold text-red-600 mb-4">Mobile Accessories</h2>
+				<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+					{mobiles.map((mobile, index) => (
+						<div key={index} className="border border-red-600 rounded-lg p-4 bg-white shadow-lg">
+							<img src={mobile.thumbnail} alt="" className="w-full h-40 object-cover mb-2 rounded"/>
+							<div className="text-red-600 font-semibold">{mobile.name}</div>
+							<p className="text-gray-700">{mobile.price}</p>
+						</div>
+					))}
 				</div>
-			))}
-		
+			</div>
 		</div>
 	);
 };

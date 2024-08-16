@@ -1,155 +1,134 @@
-/** @format */
-
 import React, { useEffect, useState } from "react";
 import { fetchCategory } from "../FetchCategoty"; // Ensure this path is correct
-import { data } from "autoprefixer";
 
 const BeautyFetch = ({ selectCategory }) => {
-	const [categories, setCategories] = useState([]);
-	const [beauties, setBeauties] = useState([]);
-	const [fragrances, setFragrances] = useState([]);
-	const [skincare, setSkincare] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [beauties, setBeauties] = useState([]);
+  const [fragrances, setFragrances] = useState([]);
+  const [skincare, setSkincare] = useState([]);
 
-	useEffect(() => {
-		// Fetch categories
-		fetchCategory()
-			.then((fetchedCategories) => {
-				console.log("Fetched Categories:", fetchedCategories);
-				setCategories(fetchedCategories);
+  useEffect(() => {
+    fetchCategory()
+      .then((fetchedCategories) => {
+        setCategories(fetchedCategories);
+        const beautyCategory = fetchedCategories.find(
+          (category) => category.slug === "beauty"
+        );
+        if (beautyCategory) {
+          return fetch(beautyCategory.url);
+        } else {
+          return Promise.resolve(new Response(JSON.stringify([])));
+        }
+      })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setBeauties(data.products || []);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, [selectCategory]);
 
-				// Find the URL for the "beauty" category
-				const beautyCategory = fetchedCategories.find(
-					(category) => category.slug === "beauty"
-				);
-				if (beautyCategory) {
-					console.log("Beauty Category URL:", beautyCategory.url);
+  useEffect(() => {
+    fetchCategory()
+      .then((fetchedCategories) => {
+        setCategories(fetchedCategories);
+        const fragranceCategory = fetchedCategories.find(
+          (category) => category.slug === "fragrances"
+        );
+        if (fragranceCategory) {
+          return fetch(fragranceCategory.url);
+        } else {
+          return Promise.resolve(new Response(JSON.stringify([])));
+        }
+      })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setFragrances(data.products || []);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, [selectCategory]);
 
-					// Fetch data from the beauty category URL
-					return fetch(beautyCategory.url);
-				} else {
-					console.warn("Beauty category not found.");
-					return Promise.resolve(new Response(JSON.stringify([]))); // Resolve with empty data if not found
-				}
-			})
-			.then((response) => {
-				// Check if response is ok
-				if (!response.ok) {
-					throw new Error(`HTTP error! Status: ${response.status}`);
-				}
-				return response.json(); // Parse the response body as JSON
-			})
-			.then((data) => {
-				console.log(data);
-				setBeauties(data.products || []); // Assuming the data has a 'products' key
-			})
-			.catch((error) => {
-				console.error("Error fetching data:", error);
-			});
-	}, [selectCategory]);
+  useEffect(() => {
+    fetchCategory()
+      .then((fetchedCategories) => {
+        setCategories(fetchedCategories);
+        const skincareCategory = fetchedCategories.find(
+          (category) => category.slug === "skin-care"
+        );
+        if (skincareCategory) {
+          return fetch(skincareCategory.url);
+        } else {
+          return Promise.resolve(new Response(JSON.stringify([])));
+        }
+      })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setSkincare(data.products || []);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, [selectCategory]);
 
-	//fragrance
+  return (
+    <div className="p-4 bg-white">
+      <div className="text-2xl font-bold text-red-600 mb-6">Beauty Products</div>
 
-	useEffect(() => {
-		// Fetch categories
-		fetchCategory()
-			.then((fetchedCategories) => {
-				console.log("Fetched Categories:", fetchedCategories);
-				setCategories(fetchedCategories);
-
-				// Find the URL for the "beauty" category
-				const fragranceCategory = fetchedCategories.find(
-					(category) => category.slug === "fragrances"
-				);
-				if (fragranceCategory) {
-					console.log(
-						"Fragrance Category URL:",
-						fragranceCategory.url
-					);
-
-					// Fetch data from the beauty category URL
-					return fetch(fragranceCategory.url);
-				} else {
-					console.warn("Beauty category not found.");
-					return Promise.resolve(new Response(JSON.stringify([]))); // Resolve with empty data if not found
-				}
-			})
-			.then((response) => {
-				// Check if response is ok
-				if (!response.ok) {
-					throw new Error(`HTTP error! Status: ${response.status}`);
-				}
-				return response.json(); // Parse the response body as JSON
-			})
-			.then((data) => {
-				console.log(data);
-				setFragrances(data.products || []); // Assuming the data has a 'products' key
-			})
-			.catch((error) => {
-				console.error("Error fetching data:", error);
-			});
-	}, [selectCategory]);
-
-	//skincare
-	useEffect(() => {
-		// Fetch categories
-		fetchCategory()
-			.then((fetchedCategories) => {
-				console.log("Fetched Categories:", fetchedCategories);
-				setCategories(fetchedCategories);
-
-				// Find the URL for the "beauty" category
-				const skincareCategory = fetchedCategories.find(
-					(category) => category.slug === "skin-care"
-				);
-				if (skincareCategory) {
-					console.log("skincare Category URL:", skincareCategory.url);
-
-					// Fetch data from the skincare category URL
-					return fetch(skincareCategory.url);
-				} else {
-					console.warn("skincare category not found.");
-					return Promise.resolve(new Response(JSON.stringify([]))); // Resolve with empty data if not found
-				}
-			})
-			.then((response) => {
-				// Check if response is ok
-				if (!response.ok) {
-					throw new Error(`HTTP error! Status: ${response.status}`);
-				}
-				return response.json(); // Parse the response body as JSON
-			})
-			.then((data) => {
-				console.log(data);
-				setSkincare(data.products || []); // Assuming the data has a 'products' key
-			})
-			.catch((error) => {
-				console.error("Error fetching data:", error);
-			});
-	}, [selectCategory]);
-	console.log();
-	return (
-		<div>
-			<div className='w-[300px] h-[26px] text-[20px] font-normal font-poppins leading-[26px] mb-[70px]'>
-				Beauty Products
-			</div>
-
-			{beauties.map((beauty, index) => (
-				<div key={index}>
-					<img src={beauty.thumbnail} alt='' />
-				</div> // Adjust based on the actual data structure
-			))}
-			{fragrances.map((frangrance, index) => (
-				<div key={index}>
-					<img src={frangrance.thumbnail} alt='' />
-				</div> // Adjust based on the actual data structure
-			))}
-			{skincare.map((skincare, index) => (
-				<div key={index}>
-					<img src={skincare.thumbnail} alt='' />
-				</div> // Adjust based on the actual data structure
-			))}
-		</div>
-	);
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {beauties.map((beauty, index) => (
+          <div key={index} className="border border-red-500 rounded-lg p-4 bg-white shadow-md">
+            <img src={beauty.thumbnail} alt="Beauty Product" className="w-full h-48 object-cover rounded-lg mb-4" />
+            <div className="text-center">
+              <p className="text-lg font-semibold text-red-600">Value: ${beauty.price}</p>
+              <div className="flex justify-center mt-2">
+                <span className="text-yellow-500">★★★★☆</span>
+              </div>
+            </div>
+          </div>
+        ))}
+        {fragrances.map((fragrance, index) => (
+          <div key={index} className="border border-red-500 rounded-lg p-4 bg-white shadow-md">
+            <img src={fragrance.thumbnail} alt="Fragrance Product" className="w-full h-48 object-cover rounded-lg mb-4" />
+            <div className="text-center">
+              <p className="text-lg font-semibold text-red-600">Value: ${fragrance.price}</p>
+              <div className="flex justify-center mt-2">
+                <span className="text-yellow-500">★★★★☆</span>
+              </div>
+            </div>
+          </div>
+        ))}
+        {skincare.map((skincareItem, index) => (
+          <div key={index} className="border border-red-500 rounded-lg p-4 bg-white shadow-md">
+            <img src={skincareItem.thumbnail} alt="Skincare Product" className="w-full h-48 object-cover rounded-lg mb-4" />
+            <div className="text-center">
+              <p className="text-lg font-semibold text-red-600">Value: ${skincareItem.price}</p>
+              <div className="flex justify-center mt-2">
+                <span className="text-yellow-500">★★★★☆</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default BeautyFetch;

@@ -11,6 +11,7 @@ import { IoShieldCheckmarkSharp } from "react-icons/io5";
 
 
 import '../About.css'
+import Footer from "./Footer";
 
 
 const About = () => {
@@ -139,7 +140,7 @@ const About = () => {
             </div>
         </div>
      </div>
-     
+     <Footer />
     </>
   )
 }
