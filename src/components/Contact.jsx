@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import NavBar from './NavBar';
 import { IoCallOutline } from 'react-icons/io5';
 import { GoMail } from 'react-icons/go';
@@ -8,9 +8,9 @@ import Footer from './Footer'
 const Contact = () => {
   return (
     <>
-      <NavBar />
+    
       <div className="main-container">
-        <span className="main">Home</span> <span className='active'> / Contact</span>
+        <span className="main ">Home</span> <span className='active'> / Contact</span>
         <div className="outside-container">
           <div className="contact-details">
             <div className="header">
@@ -45,7 +45,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className="footer">
+      <div className=" ">
       <Footer />
       </div>
     </>
