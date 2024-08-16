@@ -15,6 +15,9 @@ import WomenFetch from "./components/WomenFetch";
 import HomeEquipments from "./components/HomeEquipments";
 import MensCategories from "./components/MensCategories";
 import Wishlist from "./components/Wishlist";
+import KitchensFetch from "./components/KitchensFetch";
+import WatchFetch from "./components/WatchFetch";
+import DeviceFetch from "./components/DeviceFetch";
 //This a count-down Library snippet...DON'T EDIT!!!!!!
 
 const Completionist = () => <span>Time&#39;s up!</span>;
@@ -86,27 +89,29 @@ function App() {
 	return (
 		<>
 			<NavBar />
-			
-				<Routes>
-					<Route
-						path='/'
-						element={
-							<Home
-								countdownTimer={countdownTimer}
-								countdownTimer2={countdownTimer2}
-							/>
-						}
-					/>
-					<Route path='/contact' element={<Contact />} />
-					<Route path='/about' element={<About />} />
-					<Route path='/signup' element={<SignUpForm />} />
+
+			<Routes>
+				<Route
+					path='/'
+					element={
+						<Home
+							countdownTimer={countdownTimer}
+							countdownTimer2={countdownTimer2}
+						/>
+					}
+				/>
+				<Route path='/contact' element={<Contact />} />
+				<Route path='/about' element={<About />} />
+				<Route path='/signup' element={<SignUpForm />} />
 				<Route path='/beautyFetch' element={<BeautyFetch />} />
-				<Route path="/womenFetch" element={<WomenFetch />} />
-				<Route path="/homeEquipments" element={<HomeEquipments />} />
-        <Route path="/mensCategories" element={<MensCategories />} />
-        <Route path="/wishlist" element={<Wishlist/>} />
-				</Routes>
-		
+				<Route path='/womenFetch' element={<WomenFetch />} />
+				<Route path='/homeEquipments' element={<HomeEquipments />} />
+				<Route path='/mensCategories' element={<MensCategories />} />
+				<Route path='/wishlist' element={<Wishlist />} />
+				<Route path='/kitchensFetch' element={<KitchensFetch />} />
+				<Route path='/watchFetch' element={<WatchFetch />} />
+				<Route path='/deviceFetch' element={<DeviceFetch />} />
+			</Routes>
 		</>
 	);
 }
