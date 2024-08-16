@@ -1,110 +1,113 @@
 /** @format */
 
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchCategory } from "../FetchCategoty";
 
-const HomeEquipments= ({ selectCategory }) => {
+const HomeEquipments = ({ selectCategory }) => {
 	const [categories, setCategories] = useState([]);
 	const [furnitures, setFurniture] = useState([]);
 	const [decorations, setDecoration] = useState([]);
 
 	useEffect(() => {
-		// Fetch categories
 		fetchCategory()
 			.then((fetchedCategories) => {
 				console.log("Fetched Categories:", fetchedCategories);
 				setCategories(fetchedCategories);
 
-				// Find the URL for the "furnitures" category
 				const furnituresCategory = fetchedCategories.find(
 					(category) => category.slug === "furniture"
 				);
 				if (furnituresCategory) {
-					console.log("furnitures Category URL:", furnituresCategory.url);
-
-					// Fetch data from the furnitures category URL
+					console.log("Furnitures Category URL:", furnituresCategory.url);
 					return fetch(furnituresCategory.url);
 				} else {
-					console.warn("furnitures category not found.");
-					return Promise.resolve(new Response(JSON.stringify([]))); // Resolve with empty data if not found
+					console.warn("Furnitures category not found.");
+					return Promise.resolve(new Response(JSON.stringify([])));
 				}
 			})
 			.then((response) => {
-				// Check if response is ok
 				if (!response.ok) {
 					throw new Error(`HTTP error! Status: ${response.status}`);
 				}
-				return response.json(); // Parse the response body as JSON
+				return response.json();
 			})
 			.then((data) => {
 				console.log(data);
-				setFurniture(data.products || []); // Assuming the data has a 'products' key
+				setFurniture(data.products || []);
 			})
 			.catch((error) => {
 				console.error("Error fetching data:", error);
 			});
 	}, [selectCategory]);
 
-	//decoration
-
 	useEffect(() => {
-		// Fetch categories
 		fetchCategory()
 			.then((fetchedCategories) => {
 				console.log("Fetched Categories:", fetchedCategories);
 				setCategories(fetchedCategories);
 
-				// Find the URL for the "beauty" category
 				const decorationCategory = fetchedCategories.find(
 					(category) => category.slug === "home-decoration"
 				);
 				if (decorationCategory) {
-					console.log(
-						"decoration Category URL:",
-						decorationCategory.url
-					);
-
-					// Fetch data from the beauty category URL
+					console.log("Decoration Category URL:", decorationCategory.url);
 					return fetch(decorationCategory.url);
 				} else {
-					console.warn("Beauty category not found.");
-					return Promise.resolve(new Response(JSON.stringify([]))); // Resolve with empty data if not found
+					console.warn("Decoration category not found.");
+					return Promise.resolve(new Response(JSON.stringify([])));
 				}
 			})
 			.then((response) => {
-				// Check if response is ok
 				if (!response.ok) {
 					throw new Error(`HTTP error! Status: ${response.status}`);
 				}
-				return response.json(); // Parse the response body as JSON
+				return response.json();
 			})
 			.then((data) => {
 				console.log(data);
-				setDecoration(data.products || []); // Assuming the data has a 'products' key
+				setDecoration(data.products || []);
 			})
 			.catch((error) => {
 				console.error("Error fetching data:", error);
 			});
 	}, [selectCategory]);
-	console.log();
+
 	return (
-		<div>
-			<div className='w-[300px] h-[26px] text-[20px] font-normal font-poppins leading-[26px] mb-[70px]'>
-				Beauty Products
+		<div className="p-4 bg-white text-red-600">
+			{/* Header */}
+			<div className="text-2xl font-semibold mb-8 border-b-2 border-red-600 pb-2">
+				Home Equipments
 			</div>
 
-			{furnitures.map((furniture, index) => (
-				<div key={index}>
-					<img src={furniture.thumbnail} alt='' />
-				</div> // Adjust based on the actual data structure
-			))}
-			{decorations.map((decoration, index) => (
-				<div key={index}>
-					<img src={decoration.thumbnail} alt='' />
-				</div> // Adjust based on the actual data structure
-			))}
+			{/* Furnitures Section */}
+			<div className="mb-8">
+				<h2 className="text-xl font-semibold text-red-600 mb-4">Furnitures</h2>
+				<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+					{furnitures.map((furniture, index) => (
+						<div key={index} className="border border-red-600 rounded-lg p-4 bg-white shadow-lg">
+							<img src={furniture.thumbnail} alt="" className="w-full h-40 object-cover mb-2 rounded"/>
+							<div className="text-red-600 font-semibold">{furniture.name}</div>
+							<p className="text-gray-700">{furniture.price}</p>
+						</div>
+					))}
+				</div>
+			</div>
+
+			{/* Decorations Section */}
+			<div>
+				<h2 className="text-xl font-semibold text-red-600 mb-4">Decorations</h2>
+				<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+					{decorations.map((decoration, index) => (
+						<div key={index} className="border border-red-600 rounded-lg p-4 bg-white shadow-lg">
+							<img src={decoration.thumbnail} alt="" className="w-full h-40 object-cover mb-2 rounded"/>
+							<div className="text-red-600 font-semibold">{decoration.name}</div>
+							<p className="text-gray-700">{decoration.price}</p>
+						</div>
+					))}
+				</div>
+			</div>
 		</div>
 	);
 };
 
-export default HomeEquipments
+export default HomeEquipments;

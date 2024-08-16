@@ -23,6 +23,7 @@ import { FaTruckFast } from "react-icons/fa6";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import { IoShieldCheckmark } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 const Home = ({ countdownTimer, countdownTimer2 }) => {
 	const [products, setProducts] = useState([]);
@@ -464,6 +465,7 @@ const Home = ({ countdownTimer, countdownTimer2 }) => {
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</>
 	);
 };

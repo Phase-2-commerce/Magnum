@@ -1,9 +1,7 @@
 /** @format */
 
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchCategory } from "../FetchCategoty"; // Ensure this path is correct
-import { data } from "autoprefixer";
 
 const KitchensFetch = ({ selectCategory }) => {
 	const [categories, setCategories] = useState([]);
@@ -16,30 +14,26 @@ const KitchensFetch = ({ selectCategory }) => {
 				console.log("Fetched Categories:", fetchedCategories);
 				setCategories(fetchedCategories);
 
-				// Find the URL for the "beauty" category
 				const kitchenCategory = fetchedCategories.find(
 					(category) => category.slug === "kitchen-accessories"
 				);
 				if (kitchenCategory) {
-					console.log("kitchens Category URL:", kitchenCategory.url);
-
-					// Fetch data from the kitchens category URL
+					console.log("Kitchens Category URL:", kitchenCategory.url);
 					return fetch(kitchenCategory.url);
 				} else {
-					console.warn("kitchens category not found.");
-					return Promise.resolve(new Response(JSON.stringify([]))); // Resolve with empty data if not found
+					console.warn("Kitchens category not found.");
+					return Promise.resolve(new Response(JSON.stringify([])));
 				}
 			})
 			.then((response) => {
-				// Check if response is ok
 				if (!response.ok) {
 					throw new Error(`HTTP error! Status: ${response.status}`);
 				}
-				return response.json(); // Parse the response body as JSON
+				return response.json();
 			})
 			.then((data) => {
 				console.log(data);
-				setKitchens(data.products || []); // Assuming the data has a 'products' key
+				setKitchens(data.products || []);
 			})
 			.catch((error) => {
 				console.error("Error fetching data:", error);
@@ -47,16 +41,31 @@ const KitchensFetch = ({ selectCategory }) => {
 	}, [selectCategory]);
 
 	return (
-		<div>
-			<div className='w-[300px] h-[26px] text-[20px] font-normal font-poppins leading-[26px] mb-[70px]'>
-				Beauty Products
+		<div className="p-4 bg-white text-red-600">
+			{/* Header */}
+			<div className="text-2xl font-semibold mb-8 border-b-2 border-red-600 pb-2">
+				Kitchen Accessories
 			</div>
 
-			{kitchens.map((kitchen, index) => (
-				<div key={index}>
-					<img src={kitchen.thumbnail} alt='' />
-				</div> // Adjust based on the actual data structure
-			))}
+			{/* Kitchens Section */}
+			<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+				{kitchens.map((kitchen, index) => (
+					<div
+						key={index}
+						className="border border-red-600 rounded-lg p-4 bg-white shadow-lg"
+					>
+						<img
+							src={kitchen.thumbnail}
+							alt={kitchen.name || 'Kitchen Accessory'}
+							className="w-full h-40 object-cover mb-2 rounded"
+						/>
+						<div className="text-red-600 font-semibold">
+							{kitchen.name || 'Kitchen Accessory'}
+						</div>
+						<p className="text-gray-700">{kitchen.price || 'Price not available'}</p>
+					</div>
+				))}
+			</div>
 		</div>
 	);
 };
