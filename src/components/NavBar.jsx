@@ -10,9 +10,7 @@ const NavBar = () => {
 			<nav className='h-[100px] border-b border-gray-500'>
 				<div className='flex justify-around w-[1440px] h-[38px] relative top-[50px] left-[135px] gap-[148px]'>
 					<div className='flex gap-[190px] items-center'>
-						<p className='font-bold text-2xl leading-6 tracking-wide'>
-							Exclusive
-						</p>
+				<img src="/src/assets/2.png" alt="" className="h-[240px] mt-[-20px]"  />
 						<ul className='list-none flex gap-[48px]'>
 							<li className='font-poppins font-normal text-base leading-6 text-center hover:scale-110 transition-all duration-300 border-b border-transparent hover:border-grey-500 hover:text-red-500 ease-in-out'>
 								<NavLink to='/' className='hover'>

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /** @format */
 
 import { useEffect, useState } from "react";
@@ -12,17 +13,15 @@ import { GiLipstick } from "react-icons/gi";
 import { RiArmchairLine } from "react-icons/ri";
 import { GiClothes } from "react-icons/gi";
 import { FaKitchenSet } from "react-icons/fa6";
-import { IoCarOutline } from "react-icons/io5";
 import { MdDevices } from "react-icons/md";
 import { TiWatch } from "react-icons/ti";
-import { LiaMotorcycleSolid } from "react-icons/lia";
-import { MdSportsBasketball } from "react-icons/md";
 import { CiHeart } from "react-icons/ci";
 import { IoEyeOutline } from "react-icons/io5";
 import { FaTruckFast } from "react-icons/fa6";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import { IoShieldCheckmark } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import   Footer from "./Footer";
 
 const Home = ({ countdownTimer, countdownTimer2 }) => {
 	const [products, setProducts] = useState([]);
@@ -138,7 +137,7 @@ const Home = ({ countdownTimer, countdownTimer2 }) => {
 				</div>
 				<div className='w-[892px] h-[344px] absolute top-[182px] left-[413px] bg-black'>
 					<img
-						className="absolute left-[320px]"
+						className='absolute left-[320px]'
 						src='https://www.apple.com/newsroom/images/product/iphone/lifestyle/Apple_iPhone-11-and-iPhone-11-Pro-reviews_091719_inline.gif.large.gif'
 						alt=''
 					/>
@@ -156,10 +155,10 @@ const Home = ({ countdownTimer, countdownTimer2 }) => {
 								</div>
 							</div>
 							<div className='font-[600] text-[36px] leading-[48px] tracking-[4%] '>
-								<h4>Flash Sales</h4>
+								<h4 className='font-inter'>Flash Sales</h4>
 							</div>
 						</div>
-						<div className='w-[302px] h-[50px] relative top-[54%]   '>
+						<div className='w-[302px] h-[50px] relative top-[54%] font-inter  '>
 							{countdownTimer}
 						</div>
 					</div>
@@ -192,7 +191,9 @@ const Home = ({ countdownTimer, countdownTimer2 }) => {
 								</div>
 							</div>
 							<div className='font-[600] text-[36px] leading-[48px] tracking-[4%] '>
-								<h4>Browse By Categories</h4>
+								<h4 className='font-inter'>
+									Browse By Categories
+								</h4>
 							</div>
 						</div>
 					</div>
@@ -277,7 +278,9 @@ const Home = ({ countdownTimer, countdownTimer2 }) => {
 								</div>
 							</div>
 							<div className='font-[600] text-[36px] leading-[48px] tracking-[4%] '>
-								<h4>Best Selling Products</h4>
+								<h4 className='font-inter'>
+									Best Selling Products
+								</h4>
 							</div>
 						</div>
 					</div>
@@ -300,11 +303,11 @@ const Home = ({ countdownTimer, countdownTimer2 }) => {
 				<div className='w-[90px] h-[20px] relative top-[69px] left-[56px] text-[#00FF66] font-[600] text-[16px] leading-[20px]'>
 					Categories
 				</div>
-				<div className='w-[443px] h-[120px] relative top-[121px] left-[56px] text-white text-[48px] font-[600] leading-[60px] tracking-[4%] '>
+				<div className='w-[443px] h-[120px] relative top-[121px] left-[56px] text-white text-[48px] font-[600] leading-[60px] tracking-[4%] font-inter '>
 					Enhance Your Music Experience
 				</div>
 				<div className='w-[320px] h-[62px] absolute top-[273px] left-[6px] flex flex-row gap-[24px]'>
-					<div className='w-[450px] relative left-[60px] h-[65px] rounded-[5px] bg-white p-[10px]'>
+					<div className='w-[450px] relative left-[60px] h-[65px] rounded-[5px] bg-white p-[10px] font-inter'>
 						{countdownTimer2}
 					</div>
 					<button className='bg-[#00FF66] h-[56px] w-[171px] absolute top-[145px] left-[56px] text-white rounded-[4px] hover:bg-transparent hover:border border-[#00FF66] '>
@@ -331,7 +334,7 @@ const Home = ({ countdownTimer, countdownTimer2 }) => {
 								</div>
 							</div>
 							<div className='font-[600] text-[36px] leading-[48px] tracking-[4%] '>
-								<h4>New Arrival</h4>
+								<h4 className='font-inter'>New Arrival</h4>
 							</div>
 						</div>
 					</div>
@@ -353,7 +356,7 @@ const Home = ({ countdownTimer, countdownTimer2 }) => {
 							alt=''
 						/>
 						<div className='flex flex-col gap-[16px] absolute top-[360px] left-[32px]'>
-							<div className='text-white font-[600] text-[24px] leading-[] '>
+							<div className='text-white font-[600] text-[24px] leading-[24px] font-inter'>
 								Play Station 5
 							</div>
 							<div className='text-[#FAFAFA] w-[242px] h-[42px] text-[14px] font-[400] leading-[21px]'>
@@ -374,7 +377,7 @@ const Home = ({ countdownTimer, countdownTimer2 }) => {
 							/>
 							<div className='flex flex-col gap-[32px] relative top-[138px] left-[24px]  '>
 								<div className='flex flex-col gap-[16px]'>
-									<div className='text-white w-[255px] h-[24px] font-[600] text-[24px] leading-[24px] tracking-[3%]  '>
+									<div className='text-white font-inter w-[255px] h-[24px] font-[600] text-[24px] leading-[24px] tracking-[3%]  '>
 										Women’s Collections
 									</div>
 									<div className='text-[#FAFAFA] w-[255px] h-[42px] text-[14px] font-[400] leading-[21px]'>
@@ -395,7 +398,7 @@ const Home = ({ countdownTimer, countdownTimer2 }) => {
 									alt=''
 								/>
 								<div className='flex flex-col gap-[8px] absolute top-[165px] left-[24px] '>
-									<div className='text-white w-[255px] h-[24px] font-[600] text-[24px] leading-[24px] tracking-[3%]  '>
+									<div className='text-white font-inter w-[255px] h-[24px] font-[600] text-[24px] leading-[24px] tracking-[3%]  '>
 										Serum
 									</div>
 									<div className='text-[#FAFAFA] w-[255px] h-[42px] text-[14px] font-[400] leading-[21px]'>
@@ -410,7 +413,7 @@ const Home = ({ countdownTimer, countdownTimer2 }) => {
 							<div className='w-[270px] h-[284px] bg-black relative'>
 								<img src='https://cdn.salla.sa/qdgeZ/TXXixmvFDM0kQTw89JjJaqk5ogl70KcvuuGBqN8x.jpg' />
 								<div className='flex flex-col gap-[8px] absolute top-[175px] left-[24px]  '>
-									<div className='text-white w-[255px] h-[24px] font-[600] text-[24px] leading-[24px] tracking-[3%]  '>
+									<div className='text-white font-inter w-[255px] h-[24px] font-[600] text-[24px] leading-[24px] tracking-[3%]  '>
 										Perfume
 									</div>
 									<div className='text-[#FAFAFA] w-[255px] h-[42px] text-[14px] font-[400] leading-[21px]'>
@@ -464,6 +467,7 @@ const Home = ({ countdownTimer, countdownTimer2 }) => {
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</>
 	);
 };
